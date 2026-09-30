@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b63">
+  <title>Dr. med. Christian Witt | Pneumologie</title>
+  <style>
+    :root {
+      --ink:#142d49; --navy:#10395f; --blue:#247bb5; --sky:#e9f5fc;
+      --teal:#41b7bd; --muted:#61758a; --line:#dce9f2; --bg:#f4f8fb;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+    .header{background:#fff;border-bottom:1px solid var(--line)}
+    header{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}
+    .brand-symbol{width:48px;height:48px;border:2px solid #9aafc1;border-right-color:transparent;border-radius:50%;display:grid;place-items:center;font-size:23px;font-weight:400;position:relative}
+    .brand-symbol:after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:var(--teal);right:0;bottom:1px;border:3px solid white}
+    .brand-text{font-size:18px;letter-spacing:.17em;font-weight:700}
+    .brand-text small{display:block;margin-top:4px;font-size:11px;letter-spacing:0;color:#72869a;font-weight:400}
+    nav{display:flex;align-items:center;gap:29px;font-size:14px;color:#516b84}
+    nav a{text-decoration:none}
+    nav a:hover{color:var(--blue)}
+    .nav-button{background:var(--navy);color:white!important;border-radius:30px;padding:13px 19px;font-weight:700;box-shadow:0 8px 20px #10395f20}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(110deg,#eaf6fd 0%,#f6fbfe 53%,#e2f4f5 100%)}
+    .hero:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;right:-120px;top:-280px;background:#54c1c92b}
+    .hero:after{content:"";position:absolute;left:-8%;bottom:-110px;width:65%;height:150px;border-radius:50%;background:#fff;opacity:.55}
+    .hero-inner{min-height:365px;padding:62px 0;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:34px;position:relative;z-index:1}
+    .kicker{font-size:12px;letter-spacing:.15em;font-weight:700;color:var(--blue);text-transform:uppercase}
+    .kicker:before{content:"";display:inline-block;width:27px;height:2px;background:var(--teal);vertical-align:middle;margin-right:10px}
+    h1{margin:16px 0 11px;font-size:clamp(38px,5vw,58px);line-height:1.05;letter-spacing:-.04em;color:var(--navy)}
+    .subtitle{margin:0;color:#345570;font-size:23px;font-weight:600}
+    .intro{max-width:590px;margin:18px 0 25px;color:var(--muted);font-size:16px;line-height:1.65}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .button{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:700}
+    .button.primary{background:var(--navy);color:white;box-shadow:0 9px 20px #10395f20}
+    .button.secondary{background:#ffffffa8;border:1px solid #c4dce9;color:var(--navy)}
+    .button:hover{transform:translateY(-1px)}
+    .visual{height:270px;display:grid;place-items:center;position:relative}
+    .visual-circle{width:265px;height:265px;border-radius:50%;background:linear-gradient(145deg,#d6eff8,#fff);border:1px solid #fff;box-shadow:0 25px 65px #1b668b20;display:grid;place-items:center}
+    .lungs{width:72%;height:72%}
+    .visual-tag{position:absolute;right:0;bottom:15px;background:#fff;border:1px solid #e2edf4;border-radius:14px;padding:13px 17px;box-shadow:0 12px 28px #10395f16;color:var(--navy);font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px}
+    .tag-dot{height:10px;width:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px #41b7bd22}
+    .quick{background:white;padding:25px 0 28px}
+    .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .quick-item{display:flex;align-items:flex-start;gap:13px;padding:9px 4px}
+    .quick-icon{flex:0 0 48px;width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#e7f4fb;color:var(--blue);font-size:25px}
+    .quick-item:nth-child(2) .quick-icon{background:#e3f7f1;color:#159b83}
+    .quick-item:nth-child(3) .quick-icon{background:#f0edff;color:#7865bd}
+    .quick-item:nth-child(4) .quick-icon{background:#fff3e3;color:#c48b3b}
+    .quick-item strong{display:block;color:var(--navy);font-size:14px;margin:3px 0 7px}
+    .quick-item span{font-size:12px;color:var(--muted);line-height:1.55}
+    main{padding:43px 0 65px}
+    .heading{margin-bottom:22px}
+    .heading .kicker{margin-bottom:10px}
+    h2{font-size:27px;letter-spacing:-.02em;margin:0;color:var(--navy)}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .card{min-height:165px;background:white;border:1px solid var(--line);border-radius:17px;padding:25px;display:flex;gap:19px;box-shadow:0 8px 24px #183d5a08}
+    .card-icon{width:53px;height:53px;flex:0 0 53px;border-radius:50%;display:grid;place-items:center;background:#e5f4fc;color:var(--blue);font-size:25px}
+    .card:nth-child(2) .card-icon{background:#e1f7f0;color:#159b83}
+    .card:nth-child(3) .card-icon{background:#f0edff;color:#7865bd}
+    .card:nth-child(4) .card-icon{background:#e5f4fc;color:var(--blue)}
+    .card-body{padding-top:3px;min-width:0}
+    .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7c91a5;font-weight:700;margin:0 0 10px}
+    .value{font-size:19px;line-height:1.4;font-weight:700;color:var(--navy);margin:0;overflow-wrap:anywhere}
+    .note{font-size:13px;color:var(--muted);line-height:1.55;margin:6px 0 0}
+    .phone{color:var(--blue);text-decoration:none}
+    .phone:hover{text-decoration:underline}
+    .wide{grid-column:1/-1;min-height:130px;align-items:center;background:linear-gradient(100deg,#fff,#f0faf9)}
+    .wide .card-icon{background:#ddf6f0;color:#159b83}
+    footer{background:#0d3154;color:#d9e9f5;padding:25px 0;position:relative;overflow:hidden}
+    footer:after{content:"";position:absolute;width:200px;height:200px;border:1px solid #ffffff13;border-radius:50%;right:7%;top:-125px}
+    .footer-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .footer-brand{font-size:15px;font-weight:700;letter-spacing:.04em}
+    .footer-small{margin-top:6px;font-size:12px;color:#a8c2d7}
+    .footer-address{text-align:right;font-size:12px;line-height:1.65;color:#bfd2e1}
+    @media(max-width:820px){
+      .wrap{width:calc(100% - 36px)}nav{gap:15px}nav a:not(.nav-button){display:none}
+      .hero-inner{grid-template-columns:1fr .7fr;gap:8px;min-height:340px;padding:48px 0}
+      .visual-circle{width:220px;height:220px}.quick-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+    }
+    @media(max-width:560px){
+      .wrap{width:calc(100% - 32px)}header{min-height:72px}.brand-symbol{width:40px;height:40px;font-size:19px}.brand-text{font-size:14px}
+      .brand-text small{font-size:10px}.nav-button{padding:11px 13px;font-size:12px}
+      .hero-inner{display:block;padding:46px 0 50px;min-height:0}.visual{display:none}h1{font-size:39px}
+      .subtitle{font-size:19px}.intro{font-size:14px}.quick-grid{gap:4px}
+      .quick-item{gap:9px;padding:9px 1px}.quick-icon{width:39px;height:39px;flex-basis:39px;border-radius:13px;font-size:21px}
+      .quick-item strong{font-size:12px}.quick-item span{font-size:11px}
+      main{padding:34px 0 48px}.cards{grid-template-columns:1fr;gap:11px}.card{min-height:130px;padding:20px;gap:14px}
+      .card-icon{width:46px;height:46px;flex-basis:46px}.value{font-size:17px}.wide{grid-column:auto}
+      .footer-inner{align-items:flex-start;flex-direction:column}.footer-address{text-align:left}
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="wrap">
+      <header>
+        <a class="brand" href="#start" aria-label="Charité – Universitätsmedizin Berlin">
+          <span class="brand-symbol" aria-hidden="true">C</span>
+          <span class="brand-text">CHARITÉ<small>Universitätsmedizin Berlin</small></span>
+        </a>
+        <nav aria-label="Hauptnavigation">
+          <a href="#start">Startseite</a>
+          <a href="#profil">Über uns</a>
+          <a href="#fachgebiet">Leistungsspektrum</a>
+          <a href="#kontakt">Kontakt</a>
+          <a class="nav-button" href="tel:+491771324081">☎ &nbsp; Kontakt aufnehmen</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <section class="hero" id="start">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="kicker">Facharzt für Pneumologie</div>
+        <h1>Dr. med. Christian Witt</h1>
+        <p class="subtitle">Pneumologie · Charité Berlin</p>
+        <p class="intro">Medizinische Diagnostik und Betreuung bei Erkrankungen der Lunge und Atemwege.</p>
+        <div class="actions">
+          <a class="button primary" href="tel:+491771324081">☎ &nbsp; Jetzt anrufen</a>
+          <a class="button secondary" href="#kontakt">Kontakt &amp; Standort&nbsp; ↓</a>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="visual-circle">
+          <svg class="lungs" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M107 35V105M113 35V105M110 104L80 76M110 104L140 76" stroke="#247BB5" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M79 76C59 74 43 91 35 117C27 144 31 175 48 181C65 187 91 170 99 147C105 129 103 108 99 92" fill="#8DD4E5" fill-opacity=".38" stroke="#247BB5" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M141 76C161 74 177 91 185 117C193 144 189 175 172 181C155 187 129 170 121 147C115 129 117 108 121 92" fill="#8DD4E5" fill-opacity=".38" stroke="#247BB5" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M80 104L62 124M80 104L91 127M140 104L158 124M140 104L129 127M62 124L52 151M91 127L85 151M158 124L168 151M129 127L135 151" stroke="#41B7BD" stroke-width="4" stroke-linecap="round"/>
+            <path d="M110 31V16" stroke="#247BB5" stroke-width="8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="visual-tag"><span class="tag-dot"></span> Pneumologie</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick" id="profil">
+    <div class="wrap quick-grid">
+      <div class="quick-item"><div class="quick-icon" aria-hidden="true">♧</div><div><strong>Lungenheilkunde</strong><span>Erkrankungen der Lunge und Atemwege</span></div></div>
+      <div class="quick-item"><div class="quick-icon" aria-hidden="true">◇</div><div><strong>Individuelle Betreuung</strong><span>Persönlich und patientenorientiert</span></div></div>
+      <div class="quick-item"><div class="quick-icon" aria-hidden="true">⌕</div><div><strong>Moderne Diagnostik</strong><span>Abklärung von Beschwerden</span></div></div>
+      <div class="quick-item"><div class="quick-icon" aria-hidden="true">♡</div><div><strong>Ganzheitliche Therapie</strong><span>Gesundheit und Lebensqualität</span></div></div>
+    </div>
+  </section>
+
+  <main id="kontakt">
+    <div class="wrap">
+      <div class="heading">
+        <div class="kicker">Kontakt &amp; Einrichtung</div>
+        <h2>Auf einen Blick</h2>
+      </div>
+      <div class="cards">
+        <section class="card">
+          <div class="card-icon" aria-hidden="true">♙</div>
+          <div class="card-body"><p class="label">Ansprechpartner</p><p class="value">Dr. med. Christian Witt</p><p class="note">Fachgebiet: Pneumologie</p></div>
+        </section>
+        <section class="card">
+          <div class="card-icon" aria-hidden="true">✚</div>
+          <div class="card-body"><p class="label">Einrichtung</p><p class="value">Charité – Universitätsmedizin Berlin</p></div>
+        </section>
+        <section class="card">
+          <div class="card-icon" aria-hidden="true">☎</div>
+          <div class="card-body"><p class="label">Telefon</p><p class="value"><a class="phone" href="tel:+491771324081">+49 177 1324081</a></p><p class="note">Telefonische Kontaktaufnahme</p></div>
+        </section>
+        <section class="card">
+          <div class="card-icon" aria-hidden="true">⌖</div>
+          <div class="card-body"><p class="label">Adresse</p><p class="value">Charitéplatz 1<br>10117 Berlin, Deutschland</p></div>
+        </section>
+        <section class="card wide" id="fachgebiet">
+          <div class="card-icon" aria-hidden="true">♧</div>
+          <div class="card-body"><p class="label">Fachgebiet</p><p class="value">Pneumologie</p><p class="note">Diagnostik und medizinische Betreuung bei Erkrankungen der Lunge und Atemwege.</p></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div><div class="footer-brand">CHARITÉ · Universitätsmedizin Berlin</div><div class="footer-small">Medizin, Forschung und Lehre in Berlin</div></div>
+      <div class="footer-address">Charitéplatz 1<br>10117 Berlin, Deutschland</div>
+    </div>
+  </footer>
+</body>
+</html>
